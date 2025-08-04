@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Documento Adicional</title>
+</head>
+<body>
+<h2>Insertar Documento Adicional</h2>
+
+<div th:if="${mensaje}">
+    <p th:text="${mensaje}"></p>
+</div>
+
+<form action="/version2" method="post">
+    <label for="documento">Documento adicional (ID):</label>
+    <input type="text" id="documento" name="documento" required>
+    <br><br>
+    <button type="submit">Guardar</button>
+</form>
+</body>
+</html>

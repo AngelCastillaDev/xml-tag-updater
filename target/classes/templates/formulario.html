@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Versión 3 - Cargar XML</title>
+</head>
+<body>
+<h2>Versión 3 - Insertar Documento en archivo XML</h2>
+
+<div th:if="${mensaje}">
+    <p th:text="${mensaje}"></p>
+</div>
+
+<form action="/version3" method="post" enctype="multipart/form-data">
+    <label for="documento">Documento adicional (ID):</label>
+    <input type="text" id="documento" name="documento" required>
+    <br><br>
+
+    <label for="archivoXml">Seleccionar archivo XML:</label>
+    <input type="file" id="archivoXml" name="archivoXml" accept=".xml" required>
+    <br><br>
+
+    <button type="submit">Subir y Procesar</button>
+</form>
+</body>
+</html>

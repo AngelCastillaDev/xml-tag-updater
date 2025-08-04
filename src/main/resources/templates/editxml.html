@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title>Editar XML</title>
+    <style>
+        body {
+            font-family: 'Segoe UI', sans-serif;
+            background-color: #f3f4f6;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            margin: 0;
+        }
+
+        .form-container {
+            background-color: #ffffff;
+            padding: 30px 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            width: 500px;
+        }
+
+        h2 {
+            color: #1f2937;
+            text-align: center;
+            margin-bottom: 25px;
+        }
+
+        label {
+            display: block;
+            font-weight: 600;
+            color: #374151;
+            margin-bottom: 8px;
+        }
+
+        input[type="text"] {
+            width: 100%;
+            padding: 10px;
+            border-radius: 8px;
+            border: 1px solid #d1d5db;
+            margin-bottom: 20px;
+            font-size: 14px;
+            background-color: #f9fafb;
+        }
+
+        input[type="text"]::placeholder {
+            color: #9ca3af;
+        }
+
+        button {
+            width: 100%;
+            background-color: #3b82f6;
+            color: white;
+            padding: 12px;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            font-size: 15px;
+            cursor: pointer;
+            transition: background-color 0.3s;
+        }
+
+        button:hover {
+            background-color: #2563eb;
+        }
+
+        .mensaje {
+            margin-top: 20px;
+            text-align: center;
+            color: green;
+            font-weight: 600;
+        }
+    </style>
+</head>
+<body>
+
+<div class="form-container">
+    <h2>📝 Editar XML directamente</h2>
+
+    <form method="post" action="/version-final-directo">
+        <label>Ruta completa del archivo XML a editar:</label>
+        <input type="text" name="rutaDestino" placeholder="Ej: C:\Users\angel\Desktop\miarchivo.xml">
+
+        <label>Documento adicional:</label>
+        <input type="text" name="documento" placeholder="Ej: T001-123">
+
+        <label>RUC Remitente:</label>
+        <input type="text" name="rucRemitente" placeholder="Ej: 20606316225">
+
+        <label>Razón Social Remitente:</label>
+        <input type="text" name="razonSocialRemitente" placeholder="Ej: EMPRESA SAC">
+
+        <label>Licencia de Conductor:</label>
+        <input type="text" name="licenciaConductor" placeholder="Ej: B12345678">
+
+        <label>Otros Datos del Conductor:</label>
+        <input type="text" name="otrosDatosConductor" placeholder="Ej: DNI 12345678">
+
+        <button type="submit">Editar XML</button>
+    </form>
+
+    <div th:if="${mensaje}" class="mensaje">
+        <p th:text="${mensaje}"></p>
+    </div>
+</div>
+
+</body>
+</html>
